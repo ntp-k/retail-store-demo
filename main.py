@@ -4,7 +4,7 @@ from app.catalog import catalog_router
 from app.product import product_router
 from fastapi.openapi.docs import get_swagger_ui_html
 
-app = FastAPI(docs_url=None)
+app = FastAPI(openapi_version="3.0.3", docs_url=None)
 
 @app.get("/")
 def root():
