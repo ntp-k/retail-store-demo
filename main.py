@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from app.cart import cart_router
 from app.catalog import catalog_router
+from app.product import product_router
 from fastapi.openapi.docs import get_swagger_ui_html
 
 app = FastAPI(docs_url=None)
@@ -16,3 +17,4 @@ def openapi_spec():
 
 app.include_router(cart_router)
 app.include_router(catalog_router)
+app.include_router(product_router)
