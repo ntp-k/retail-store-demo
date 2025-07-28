@@ -6,6 +6,10 @@ from fastapi.openapi.docs import get_swagger_ui_html
 
 app = FastAPI(docs_url=None)
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to retail-store-demo"}
+
 @app.get("/docs", include_in_schema=False)
 def custom_swagger_ui():
     return get_swagger_ui_html(openapi_url="/swagger.json", title="Retail Store API")
