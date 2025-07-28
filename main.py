@@ -18,7 +18,7 @@ def custom_swagger_ui():
 @app.get("/swagger.json", include_in_schema=False)
 def openapi_spec():
     from fastapi.openapi.utils import get_openapi
-    return get_openapi(title="Retail Store API", version="3.0.3", routes=app.routes)
+    return get_openapi(title="Retail Store API", openapi_version="3.0.3", version="1.0.0", routes=app.routes)
 
 app.include_router(cart_router)
 app.include_router(catalog_router)
